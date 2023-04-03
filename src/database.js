@@ -1,11 +1,9 @@
-import { createConnection } from "mysql"
-import createHttpError from "http-errors"
-const { InternalServerError } = createHttpError
+import { createConnection } from "mysql2"
+// import createHttpError from "http-errors"
 
-import { DB_PORT, DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } from "./config/index.js"
+import { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } from "./config/index.js"
 
 const connection = createConnection({
-  port: DB_PORT,
   host: DB_HOST,
   user: DB_USER,
   password: DB_PASSWORD,
@@ -14,7 +12,7 @@ const connection = createConnection({
 
 connection.connect((err) => {
   if (err) {
-    console.error({ success: false, message: err.message })
+    console.error({ success: false, message: "❌️ Unable to connect to database" })
     return
     // throw createHttpError(501, "Unable to connect to database")
   }

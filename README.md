@@ -1,1 +1,6 @@
-# Working on DBMS Project....
+## Working on DBMS Project....
+
+## Back-End:
+
+- ExpressJS
+- MySQL Database

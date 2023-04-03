@@ -3,7 +3,8 @@ import database from "../database.js"
 
 export const getAllProducts = (req, res, next) => {
   try {
-    const query = "SELECT * FROM products ORDER BY name;"
+    const query = `SELECT p.id,p.name,p.description,p.price,p.active,c.id, as categoryId,c.name as categoryName FROM products as p
+    INNER JOIN categories as c WHERE p.categoryId = c.id;`
     database.query(query, (err, products) => {
       if (err) return next(createHttpError(500, "❌️ Internal Server Error"))
       res.status(200).json({ success: true, data: products })
@@ -15,11 +16,8 @@ export const getAllProducts = (req, res, next) => {
 }
 
 export const addProduct = (req, res, next) => {
-  let { name, categoryId, description, price, status } = req.body
-
+  let { name, categoryId, description, price, active } = req.body
   name = name.toLowerCase()
-  categoryId = categoryId.toLowerCase()
-  status = status.toLowerCase()
 
   const query = "SELECT * FROM products WHERE name = ?;"
   database.query(query, [name], (err, products) => {
@@ -27,8 +25,8 @@ export const addProduct = (req, res, next) => {
 
     if (products.length > 0) next(createHttpError(406, "⚠️ Product already exist."))
 
-    const insertQuery = "INSERT INTO products(name, categoryId, description, price) VALUES(?,?,?,?,?);"
-    database.query(insertQuery, [name, categoryId, description, price, status], (err) => {
+    const insertQuery = "INSERT INTO products(name, categoryId, description, price, active) VALUES(?,?,?,?,?);"
+    database.query(insertQuery, [name, categoryId, description, price, active], (err) => {
       if (err) return next(createHttpError(500, "❌️ Internal Server Error"))
       res.status(200).json({ success: true, message: "✅️ Product Added Successfully" })
     })

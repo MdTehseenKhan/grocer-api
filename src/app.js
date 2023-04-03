@@ -1,18 +1,18 @@
+// NPM Packages
 import express from "express"
-// import passport from "passport"
 import createHttpError from "http-errors"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 
-// Middlewares
-// import usePassport from "./middleware/passport.js"
+// Middlewares Files
 import { errorHandler } from "./middleware/index.js"
 
-// Routes
+// Routes Files
 import userRoutes from "./routes/userRoutes.js"
 import categoryRoutes from "./routes/categoryRoutes.js"
 import productRoutes from "./routes/productRoutes.js"
 
+// Constants and Database
 import { PORT } from "./config/index.js"
 import "./database.js"
 
@@ -28,10 +28,6 @@ app.use(express.urlencoded({ extended: true }))
 
 // CORS
 app.use(cors({ origin: "*" }))
-
-// Passport
-// app.use(passport.initialize())
-// usePassport(passport)
 
 // App Routes
 app.use("/user", userRoutes)
