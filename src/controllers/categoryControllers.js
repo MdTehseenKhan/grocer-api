@@ -33,7 +33,8 @@ export const addCategory = (req, res, next) => {
 }
 
 export const updateCategory = (req, res, next) => {
-  let { id, name } = req.body
+  let { name } = req.body
+  const id = req?.params?.id
 
   try {
     name = name.toLowerCase()

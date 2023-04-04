@@ -12,6 +12,6 @@ router.get("/all", authenticateToken, checkAdmin, getAllCategories)
 
 router.post("/add", authenticateToken, checkAdmin, addCategoryValidation, addCategory)
 
-router.patch("/update", authenticateToken, checkAdmin, updateCategoryValidation, updateCategory)
+router.patch("/update/:id", authenticateToken, checkAdmin, updateCategoryValidation, updateCategory)
 
 export default router

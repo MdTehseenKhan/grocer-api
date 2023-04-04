@@ -4,14 +4,20 @@ import validator from "./utils/index.js"
 const productSchema = {
   addProduct: Joi.object({
     name: Joi.string().required(),
-    categoryId: Joi.number(),
+    image: Joi.string(),
     description: Joi.string(),
     price: Joi.number().required(),
-    active: Joi.boolean().default("true"),
+    categoryId: Joi.number(),
+    active: Joi.boolean(),
   }),
+  //
   updateProduct: Joi.object({
-    id: Joi.number().required(),
     name: Joi.string().required(),
+    image: Joi.string(),
+    description: Joi.string().optional(),
+    price: Joi.number().required(),
+    categoryId: Joi.number(),
+    active: Joi.boolean(),
   }),
 }
 

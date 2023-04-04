@@ -29,6 +29,8 @@ app.use(express.urlencoded({ extended: true }))
 // CORS
 app.use(cors({ origin: "*" }))
 
+app.use("/uploads", express.static("./uploads"))
+
 // App Routes
 app.use("/user", userRoutes)
 app.use("/category", categoryRoutes)

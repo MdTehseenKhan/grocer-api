@@ -6,7 +6,6 @@ const categorySchema = {
     name: Joi.string().required(),
   }),
   updateCategory: Joi.object({
-    id: Joi.number().required(),
     name: Joi.string().required(),
   }),
 }

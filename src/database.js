@@ -12,9 +12,9 @@ const connection = createConnection({
 
 connection.connect((err) => {
   if (err) {
-    console.error({ success: false, message: "❌️ Unable to connect to database" })
-    return
-    // throw createHttpError(501, "Unable to connect to database")
+    // console.error({ success: false, message: "❌️ Unable to connect to database" })
+    // return
+    throw createHttpError(501, "Unable to connect to database")
   }
 
   console.log("✅️ Successfully Connected to Database")
