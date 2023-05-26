@@ -31,6 +31,11 @@ app.use(cors({ origin: "*", credentials: true }))
 
 app.use("/uploads", express.static("./uploads"))
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Welcome to grocer api!",
+  })
+})
 // App Routes
 app.use("/user", userRoutes)
 app.use("/category", categoryRoutes)
