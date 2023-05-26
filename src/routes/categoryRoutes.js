@@ -8,10 +8,12 @@ import { getAllCategories, addCategory, updateCategory } from "../controllers/ca
 
 const router = Router()
 
-router.get("/all", authenticateToken, checkAdmin, getAllCategories)
+// router.get("/all", authenticateToken, checkAdmin, getAllCategories)
+// router.post("/add", authenticateToken, checkAdmin, addCategoryValidation, addCategory)
+// router.patch("/update/:id", authenticateToken, checkAdmin, updateCategoryValidation, updateCategory)
 
-router.post("/add", authenticateToken, checkAdmin, addCategoryValidation, addCategory)
-
-router.patch("/update/:id", authenticateToken, checkAdmin, updateCategoryValidation, updateCategory)
+router.get("/all", getAllCategories)
+router.post("/add", addCategoryValidation, addCategory)
+router.patch("/update/:id", updateCategoryValidation, updateCategory)
 
 export default router

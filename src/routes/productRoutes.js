@@ -8,19 +8,21 @@ import { getAllProducts, addProduct, updateProduct, deleteProduct } from "../con
 
 const router = Router()
 
-router.get("/all", authenticateToken, getAllProducts)
+// router.get("/all", authenticateToken, getAllProducts)
+// router.post("/add", authenticateToken, checkAdmin, addProductValidation, upload.single("image"), addProduct)
+// router.patch(
+//   "/update/:id",
+//   authenticateToken,
+//   checkAdmin,
+//   updateProductValidation,
+//   upload.single("image"),
+//   updateProduct
+// )
+// router.delete("/delete/:id", authenticateToken, checkAdmin, deleteProduct)
 
-router.post("/add", authenticateToken, checkAdmin, addProductValidation, upload.single("image"), addProduct)
-
-router.patch(
-  "/update/:id",
-  authenticateToken,
-  checkAdmin,
-  updateProductValidation,
-  upload.single("image"),
-  updateProduct
-)
-
-router.delete("/delete/:id", authenticateToken, checkAdmin, deleteProduct)
+router.get("/all", getAllProducts)
+router.post("/add", addProductValidation, addProduct)
+router.patch("/update/:id", updateProductValidation, updateProduct)
+router.delete("/delete/:id", deleteProduct)
 
 export default router
