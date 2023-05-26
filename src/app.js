@@ -27,7 +27,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 
 // CORS
-app.use(cors({ origin: "*" }))
+app.use(cors({ origin: "*", credentials: true }))
 
 app.use("/uploads", express.static("./uploads"))
 

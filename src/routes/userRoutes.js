@@ -4,7 +4,7 @@ import { authenticateToken, checkAdmin } from "../middleware/index.js"
 
 import { signupUserValidation, signinUserValidation, changePasswordValidation } from "../validation/userValidation.js"
 
-import { getAllUsers, signupUser, signinUser, forgotPassword, changePassword } from "../controllers/userControllers.js"
+import { getAllUsers, signupUser, signinUser, forgotPassword, changePassword, deleteUser } from "../controllers/userControllers.js"
 
 const router = Router()
 
@@ -15,5 +15,7 @@ router.post("/signin", signinUserValidation, signinUser)
 
 router.post("/forgot-password", forgotPassword)
 router.patch("/change-password", authenticateToken, changePasswordValidation, changePassword)
+
+router.delete("/delete/:id", authenticateToken, checkAdmin, deleteUser)
 
 export default router

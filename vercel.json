@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "grocer-server",
+  "builds": [{ "src": "src/app.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/src/(.*)", "dest": "/src/app.js" }]
+}
