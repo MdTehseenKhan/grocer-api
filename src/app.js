@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }))
 // CORS
 app.use(cors({ origin: "*", credentials: true }))
 
-// app.use("/uploads", express.static("./uploads"))
+// app.use("/uploads", express.static("../uploads"))
 
 app.get("/", (req, res) => {
   res.status(200).json({

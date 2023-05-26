@@ -4,7 +4,7 @@ import { authenticateToken, checkAdmin } from "../middleware/index.js"
 
 import { addCategoryValidation, updateCategoryValidation } from "../validation/categoryValidation.js"
 
-import { getAllCategories, addCategory, updateCategory } from "../controllers/categoryControllers.js"
+import { getAllCategories, addCategory, updateCategory, deleteCategory } from "../controllers/categoryControllers.js"
 
 const router = Router()
 
@@ -15,5 +15,6 @@ const router = Router()
 router.get("/all", getAllCategories)
 router.post("/add", addCategoryValidation, addCategory)
 router.patch("/update/:id", updateCategoryValidation, updateCategory)
+router.delete("/delete/:id", deleteCategory)
 
 export default router

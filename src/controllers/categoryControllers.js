@@ -52,3 +52,17 @@ export const updateCategory = (req, res, next) => {
     return next(createHttpError(500, "❌️ Internal Server Error"))
   }
 }
+
+export const deleteCategory = (req, res, next) => {
+  const id = req?.params?.id
+  if (!id) return next(createHttpError(404, "❌️ Category Not Found!"))
+
+  const query = "DELETE FROM categories WHERE id = ?;"
+  database.query(query, [id], (err, results) => {
+    if (err) return next(createHttpError(500, "❌️ Internal Server Error"))
+
+    if (results.affectedRows == 0) return next(createHttpError(404, "❌️ Category Not Found!"))
+
+    res.status(200).json({ success: true, message: "✅️ Category Deleted Successfully" })
+  })
+}
