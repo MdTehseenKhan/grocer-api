@@ -2,10 +2,10 @@
   "name": "backend_express",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
