@@ -40,18 +40,75 @@ VALUES  ('', '', '', 'admin');
 
 -- Normal Users
 INSERT INTO users(name, email, password)
-VALUES  ('', '', '')
+VALUES  ('', '', ''),
         ('', '', '')
 ;
 
 -- Categories
 INSERT INTO categories(name)
-VALUES  ('')
-        ('')
+VALUES  ("Vegetables"),
+        ("Fruits"),
+        ("Milk"),
+        ("Breads"),
+        ("Eggs"),
+        ("Cream"),
+        ("Butter"),
+        ("Cereal & Oats"),
+        ("Cake & Rusk"),
+        ("Cheese"),
+        ("Yogurt"),
+        ("Oil"),
+        ("Daalain"),
+        ("Spices & Herbs"),
+        ("Flour"),
+        ("Jams"),
+        ("Sauces"),
+        ("Desserts"),
+        ("Olives"),
+        ("Pickels"),
+        ("Mutton"),
+        ("Beef"),
+        ("Chicken"),
+        ("Fish"),
+        ("Biscuits"),
+        ("Noodles"),
+        ("Chocolates"),
+        ("Nimko"),
+        ("Tea"),
+        ("Cold Drinks"),
+        ("Sharbat"),
+        ("Juices"),
+        ("Energy Drinks"),
+        ("Instant Drinks"),
+        ("Cleaners"),
+        ("Detergents"),
+        ("Tissue"),
+        ("Repellents"),
+        ("Laundry"),
+        ("Shampoo"),
+        ("Conditioner"),
+        ("Female Hygiene"),
+        ("Soap"),
+        ("Body Spray"),
+        ("Hand Wash"),
+        ("Lotion"),
+        ("Creams"),
+        ("Razors"),
+        ("Gel"),
+        ("Diapers"),
+        ("Lotions"),
+        ("Baby Food"),
+        ("Peanuts"),
+        ("cashew nuts"),
+        ("almonds"),
+        ("Burger Pattie"),
+        ("Nuggets"),
+        ("Kabab"),
+        ("Frozen Desserts")
 ;
 
 -- Products
 INSERT INTO products (name, image, categoryId, description, price, active)
-VALUES  ('', '', '', '', '', '')
+VALUES  ('', '', '', '', '', ''),
         ('', '', '', '', '', '')
 ;

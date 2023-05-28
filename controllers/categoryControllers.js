@@ -5,7 +5,7 @@ export const getAllCategories = (req, res, next) => {
   try {
     const query = "SELECT * FROM categories ORDER BY name;"
     database.query(query, (err, categories) => {
-      if (err) return next(createHttpError(500, "❌️ Internal Server Error"))
+      if (err) return next(createHttpError(500, "❌️ Internal Server Error Error in query"))
       res.status(200).json({ success: true, data: categories })
     })
     //
